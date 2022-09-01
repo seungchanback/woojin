@@ -1,0 +1,10 @@
+INSERT INTO ITEM ( item_code, item_name, category, active) VALUES ("11111","샤오미 미지아2 타이어 튜브 부품","미지아 나잇봇","Active");
+INSERT INTO ITEM ( item_code, item_name, category, active) VALUES ("22222","키케이스 실리콘 커버","폭스바겐","Active");
+INSERT INTO ITEM ( item_code, item_name, category, active) VALUES ("33333","더비틀 크롬 엠블럼 로고","폭스바겐","Active");
+INSERT INTO ITEM ( item_code, item_name, category, active) VALUES ("44444","구스타프 클림트 키스","그림","Active");
+INSERT INTO ITEM ( item_code, item_name, category, active) VALUES ("55555","빈센트 반고흐 해바라기","그림","Active");
+INSERT INTO ITEM ( item_code, item_name, category, active) VALUES ("66666","구스타프 클림트 키스","그림","Active");
+INSERT INTO ITEM ( item_code, item_name, category, active) VALUES ("77777","앙리 마티스 드로잉 A","그림","Active");
+INSERT INTO ITEM ( item_code, item_name, category, active) VALUES ("88888","앙리 마티스 드로잉 B","그림","Active");
+INSERT INTO ITEM ( item_code, item_name, category, active) VALUES ("99999","앙리 마티스 드로잉 C","그림","Active");
+INSERT INTO ITEM ( item_code, item_name, category, active) VALUES ("12121","앙리 마티스 드로잉 D","그림","Active");
