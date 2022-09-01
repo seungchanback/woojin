@@ -72,11 +72,13 @@ with box_append:
 with package:
     with st.form("상품포장하기"):
         options = st.multiselect(
-        '포장할 상품을 고르세요',
-        ['item1', 'item2', 'item3', 'item4'],
-        ['item5', 'item6'])
+            '포장할 상품을 클릭하세요',
+            ['item1', 'item2', 'item3', 'item4'])
 
-        st.write('You selected:', options)
+       
+        submitted = st.form_submit_button(label="적합한 박스 찾기")
+        if submitted:
+            st.write('You selected:', options)
 
         
 def item_table_append():
