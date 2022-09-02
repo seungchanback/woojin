@@ -1,4 +1,6 @@
 import streamlit as st
+
+from box import search_best_box
 from make_barcode import make_qrcode
 
 page_title = "✨ QR 코드 생성"
@@ -78,6 +80,7 @@ with package:
        
         submitted = st.form_submit_button(label="적합한 박스 찾기")
         if submitted:
+            search_best_box()
             st.write('You selected:', options)
 
         
@@ -86,7 +89,3 @@ def item_table_append():
     """
     pass
 
-def search_best_box():
-    """상품 포장 시 최적의 박스를 찾아주는 기능
-    """
-    pass
