@@ -3,9 +3,7 @@ import cv2
 import numpy as np
 from box import decode
 from make_barcode import make_qrcode
-import os
 
-os.system('apt-get install -y libgll-mesa-glx')
 page_title = "✨ QR 코드 생성"
 st.set_page_config(page_title=page_title, page_icon="✨", layout="centered")
 st.title(page_title)

@@ -8,7 +8,7 @@ qrcode = "*"
 pillow = "*"
 image = "*"
 pyzbar = "*"
-opencv-python = "*"
+opencv-python-headless = "*"
 streamlit = "*"
 python-barcode = "*"
 
