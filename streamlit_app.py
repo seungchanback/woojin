@@ -98,4 +98,5 @@ with qr_code:
         if detected_dict == "{}":
             st.write("QR 코드가 인식되지 않았습니다 🔴")
         else:
-            st.write(detected_dict) 
+            st.write("QR 코드가 인식되었습니다 🟢")
+            st.write(detected_dict)
