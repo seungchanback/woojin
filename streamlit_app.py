@@ -1,13 +1,14 @@
 import streamlit as st
-
-from box import search_best_box
+import cv2
+import numpy as np
+from box import decode
 from make_barcode import make_qrcode
 
 page_title = "✨ QR 코드 생성"
 st.set_page_config(page_title=page_title, page_icon="✨", layout="centered")
 st.title(page_title)
 
-item_append, box_append, package  = st.tabs(["✨ 상품 QR 생성", "📦 박스 QR 생성", "🎁 상품 포장하기"])
+item_append, box_append, package,qr_code  = st.tabs(["✨ 상품 QR 생성", "📦 박스 QR 생성", "🎁 상품 포장하기", "🖍 QR 코드 인식"])
 
 with item_append:
     with st.form("상품_추가"):
@@ -19,8 +20,7 @@ with item_append:
                 "그림",
                 "폭스바겐",
                 "자전거"
-                ]
-        )
+                ])
         selected_date = st.date_input("상품 추가일자")
         cols = st.columns(3)
         width = cols[0].text_input("가로 : ")
@@ -80,12 +80,22 @@ with package:
        
         submitted = st.form_submit_button(label="적합한 박스 찾기")
         if submitted:
-            search_best_box()
             st.write('You selected:', options)
 
-        
-def item_table_append():
-    """QR 인식 시 바코드 추가
-    """
-    pass
+with qr_code:
+    img_file_buffer = st.camera_input("Take a picture")
 
+    if img_file_buffer is not None:
+        # To read image file buffer with OpenCV:
+        bytes_data = img_file_buffer.getvalue()
+        cv2_img = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
+
+        # Check the shape of cv2_img:
+        # Should output shape: (height, width, channels)
+        st.write(cv2_img.shape)
+        detected_dict = decode(cv2_img)
+        
+        if detected_dict == "{}":
+            st.write("QR 코드가 인식되지 않았습니다 🔴")
+        else:
+            st.write(detected_dict) 

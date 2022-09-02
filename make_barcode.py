@@ -12,6 +12,3 @@ def make_qrcode(data) -> dict:
     img = qrcode_setting.make_image(fit=True)
     img.save("./sample.png")
     return None
-
-
-
